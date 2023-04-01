@@ -93,7 +93,9 @@ p {
   background-color: blue;
   grid-area: aside;
 }
-
+.aside_toggle {
+  display: none;
+}
 .main {
   height: 100%;
   background-color: rgb(65, 117, 87);
@@ -131,17 +133,60 @@ p {
   .aside {
     position: absolute;
     grid-area: aside;
+    height: 10%;
     top: 15%;
     background-color: #4e0c0c;
   }
 
-  .content {
+  .aside_items {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 1rem 0 0 0;
+    background: #4e0c0c;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 45vw;
+    transform: translateX(-100%);
+    transition: 0.3s ease all;
+  }
+
+  .aside_items ul {
     padding: 0;
-    margin: 5%;
-    height: 20vh;
-    display: grid;
-    justify-items: center;
-    align-content: space-evenly;
+  }
+
+  .aside_items a {
+    text-decoration: none;
+    line-height: 2rem;
+  }
+
+  .aside_toggle {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+  }
+
+  .aside_toggle span {
+    width: 30px;
+    height: 4px;
+    background: white;
+    margin-bottom: 5px;
+    border-radius: 2px;
+    transform-origin: 5px 0px;
+    transition: all 0.2s linear;
+  }
+  .close span {
+    transform: rotate(45deg) translate(0px, 0px);
+  }
+  .close span:nth-child(2) {
+    display: none;
+  }
+  .close span:nth-child(3) {
+    transform: rotate(-45deg) translate(-5px, 1px);
+  }
+  .open {
+    transform: translateX(0);
   }
 
   .main {
