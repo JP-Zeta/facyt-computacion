@@ -92,6 +92,17 @@ p {
 .aside {
   background-color: blue;
   grid-area: aside;
+  padding: 1rem;
+}
+.aside_items ul {
+  padding: 0;
+}
+.aside_items a {
+  text-decoration: none;
+  line-height: 2rem;
+}
+.aside_items > h3 {
+  text-align: center;
 }
 .aside_toggle {
   display: none;
